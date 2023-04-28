@@ -4,7 +4,6 @@ exports.createEnvelope = async (req, res) => {
   try {
     const { documentUrl, email, name } = req.body;
     const envelope = await envelopesService.createEnvelope(documentUrl, email, name);
-    console.log("name",name);
     res.status(201).json(envelope);
   } catch (err) {
     console.log("error",err);
